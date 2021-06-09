@@ -7,11 +7,14 @@ function App() {
       <p>We eat three meals a day</p>
       {/* 3). Add comments in JSX with {} */}
       {/* 5). Add a class with className */}
+      {/* 6). Self-closing JSX Tags */}
+      <br />
       <ul className="myList">
         <li>Breakfast</li>
         <li>Lunch</li>
         <li>Dinner</li>
       </ul>
+      <hr />
     </div>
   );
 }
