@@ -31,10 +31,21 @@ class MyComponent extends React.Component {
     return (
       <div>
         <h1>Hello React!</h1>
+        <MyChildComponent />
       </div>
     )
   }
 };
+
+// 9). Render a component with composition
+const MyChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
 
 
 export default MyComponent;
