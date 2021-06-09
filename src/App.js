@@ -1,7 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+function App() {  
+  return (
+    // 2). Create a complex JSX element
+    <div>
+      {/* 1). Create a simple JSX element */}
+      <h1>Food</h1>
+      <p>We eat three meals a day</p>
+      <ul>
+        <li>Breakfast</li>
+        <li>Lunch</li>
+        <li>Dinner</li>
+      </ul>
+    </div>
+  );
+}
+    
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +34,6 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
 
 export default App;
