@@ -5,6 +5,7 @@ function App() {
       {/* 1). Create a simple JSX element */}
       <h1>Food</h1>
       <p>We eat three meals a day</p>
+      {/* 3). Add comments in JSX with {} */}
       <ul>
         <li>Breakfast</li>
         <li>Lunch</li>
