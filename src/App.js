@@ -6,7 +6,8 @@ function App() {
       <h1>Food</h1>
       <p>We eat three meals a day</p>
       {/* 3). Add comments in JSX with {} */}
-      <ul>
+      {/* 5). Add a class with className */}
+      <ul className="myList">
         <li>Breakfast</li>
         <li>Lunch</li>
         <li>Dinner</li>
