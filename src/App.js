@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // 7).Stateless functional component
 // function Apple() {  
 //   return (
@@ -22,6 +23,7 @@ import React from 'react';
 //  );
 //}
 
+
 // 8). Create a React component
 /*class MyComponent extends React.Component {
   constructor(props) {
@@ -37,6 +39,7 @@ import React from 'react';
   }
 };
 
+
 // 9). Render a component with composition
 const MyChildComponent = () => {
   return (
@@ -47,8 +50,9 @@ const MyChildComponent = () => {
 };
 */
 
+
 // 10). Use React to render nested components
-const TypesOfFruit = () => {
+/*const TypesOfFruit = () => {
   return (
     <div>
       <h2>Fruits:</h2>
@@ -80,6 +84,80 @@ class TypesOfFood extends React.Component {
       <div>
         <h1>Types of Food:</h1>
         <Fruits />
+      </div>
+    );
+  }
+};
+*/
+
+
+// 11). Render class components within other component
+const NonCitrus = () => {
+  return (
+    <div>
+      <h3>Non-Citrus:</h3>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Banana</li>
+      </ul>
+    </div>
+  );
+};
+
+const Citrus = () => {
+  return (
+    <div>
+      <h3>Citrus:</h3>
+      <ul>
+        <li>Lemon</li>
+        <li>Lime</li>
+        <li>Orange</li>
+        <li>Grapefruit</li>
+      </ul>
+    </div>
+  );
+};
+
+const Vegetables = () => {
+  return (
+    <div>
+      <h2>Vegetables:</h2>
+      <ul>
+        <li>Brussel Sprouts</li>
+        <li>Broccoli</li>
+        <li>Squash</li>
+      </ul>
+    </div>
+  )
+}
+
+class Fruits extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+        <NonCitrus />
+        <Citrus />
+      </div>
+    );
+  }
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+     super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        <Fruits />
+        <Vegetables />
       </div>
     );
   }
