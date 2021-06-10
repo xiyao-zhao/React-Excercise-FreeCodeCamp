@@ -192,4 +192,27 @@ class Calendar extends React.Component {
 };
 
 
-export default Calendar;
+// 14). Pass an array as Props
+const List = (props) => {
+  return <p>{props.tasks.join(", ")}</p>
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        <List tasks={["walk dog", "cook", "clean"]}/>
+        <h2>Tomorrow</h2>
+        <List tasks={["drive", "shop", "read"]}/>
+      </div>
+    );
+  }
+};
+
+
+export default ToDo;
