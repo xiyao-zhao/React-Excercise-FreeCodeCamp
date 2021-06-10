@@ -215,4 +215,26 @@ class ToDo extends React.Component {
 };
 
 
-export default ToDo;
+// 15). Use default Props
+const Items = (props) => {
+  return (
+    <div>
+      <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+    </div>
+  )
+};
+Items.defaultProps = { Quantity: 0 };
+
+// 16). Override default props
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items quantity={100}/>
+  }
+};
+
+
+
+export default ShoppingCart;
