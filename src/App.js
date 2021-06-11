@@ -301,5 +301,24 @@ Camper.defaultProps = { name: 'CamperBot' }
 Camper.propTypes = { name: PropTypes.string.isRequired }
 
 
+// 20). Create a statefull component
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  // 21). Render state in user interface
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
+
+
 
 export default CampSite;
