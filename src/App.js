@@ -348,6 +348,7 @@ class Component extends React.Component {
     this.state = {
       name: 'Initial State'
     };
+    // 24). Bind 'this' to a class method
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
@@ -364,6 +365,41 @@ class Component extends React.Component {
     );
   }
 };
+
+
+// 24). Use state to toggle an element
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+  }
+  toggleVisibility() {
+    this.setState(state => ({
+      visibility: !state.visibility
+    }))
+  }
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+
+
 
 
 
