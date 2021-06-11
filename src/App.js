@@ -512,7 +512,7 @@ class MyForm extends React.Component {
 
 
 // 28). Pass state as props to child components
-class MyApp extends React.Component {
+/*class MyApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -540,6 +540,7 @@ class Navbar extends React.Component {
     );
   }
 };
+*/
 
 
 // 29). Pass a callback as props
@@ -598,7 +599,7 @@ class RenderInput extends React.Component {
 
 
 // 30). Use the lifecycle method componentDidMount
-class MyComponent extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -622,5 +623,43 @@ class MyComponent extends React.Component {
 }
 
 
+// 31). Add event listeners
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+ 
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress)
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress)
+  }
 
-export default MyApp;
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+export default App;
