@@ -224,8 +224,8 @@ const Items = (props) => {
   )
 };
 
-// 17). Use PropTypes to Define the Props
-Items.propTypes = { quantity: PropTypes.number.isRequired }
+// 17). Use PropTypes to define props
+Items.propTypes = { quantity: PropTypes.number.isRequired };
 
 Items.defaultProps = { Quantity: 0 };
 
@@ -240,5 +240,66 @@ class ShoppingCart extends React.Component {
 };
 
 
+// 18). Access props using this.props
+class ReturnTempPassword extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+        <div>
+            <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>
+        </div>
+    );
+  }
+};
 
-export default ShoppingCart;
+class ResetPassword extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+        <div>
+          <h2>Reset Password</h2>
+          <h3>We've generated a new temporary password for you.</h3>
+          <h3>Please reset this password from your account settings ASAP.</h3>
+          <ReturnTempPassword tempPassword="12345678"/>
+        </div>
+    );
+  }
+};
+
+
+// 19). Review using props with stateless functional components
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper />
+      </div>
+    );
+  }
+};
+
+class Camper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <p>{this.props.name}</p>
+      </div>
+    )
+  }
+}
+Camper.defaultProps = { name: 'CamperBot' }
+Camper.propTypes = { name: PropTypes.string.isRequired }
+
+
+
+export default CampSite;
