@@ -302,7 +302,7 @@ Camper.propTypes = { name: PropTypes.string.isRequired }
 
 
 // 20). Create a statefull component
-class MyComponent extends React.Component {
+/*class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -318,10 +318,11 @@ class MyComponent extends React.Component {
     );
   }
 };
+*/
 
 
 // 22). Render state in the UI another way
-class MyComponent extends React.Component {
+/*class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -337,7 +338,33 @@ class MyComponent extends React.Component {
     );
   }
 };
+*/
+
+
+// 23). Set state with this.setState
+class Component extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Initial State'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      name: "React Rocks!"
+    })
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Click Me</button>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
 
 
 
-export default CampSite;
+export default Component;
