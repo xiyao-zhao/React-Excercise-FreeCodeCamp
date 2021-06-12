@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactDOMServer from 'react-dom/server';
 
 // 7).Stateless functional component
  function Apple() {  
@@ -1113,8 +1114,18 @@ class OnlineUser extends React.Component {
 }
 
 
-// 44). 
+// 44). Render React on the server with renderToString
+class Application extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div/>
+  }
+};
+
+ReactDOMServer.renderToString(<Application/>)
 
 
 
-export default OnlineUser;
+export default Application;
