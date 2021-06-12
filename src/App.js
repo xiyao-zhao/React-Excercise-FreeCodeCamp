@@ -704,4 +704,32 @@ class Controller extends React.Component {
 }
 
 
-export default Controller;
+// 33). Introducing inline styles
+/*class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{ color: 'red', fontSize: 72 }}>Big Red</div>
+    );
+  }
+};
+*/
+
+
+// 34). Declare a style constant 
+const styles = {
+  color: "purple",
+  fontSize: 40,
+  border: "2px solid purple"
+}
+
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={styles}>Style Me!</div>
+    );
+  }
+};
+
+
+  
+export default Colorful;
