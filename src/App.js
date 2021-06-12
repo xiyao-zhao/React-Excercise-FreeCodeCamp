@@ -804,7 +804,7 @@ class MagicEightBall extends React.Component {
 
 
 // 36). Render with an if-else condition
-class Display extends React.Component {
+/*class Display extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -832,6 +832,32 @@ class Display extends React.Component {
        </div>
     );
     }   
+  }
+};
+*/
+
+
+// 37). Use && for a more concise conditional
+class Display extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState(state => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    return (
+       <div>
+         <button onClick={this.toggleDisplay}>Toggle Display</button>
+         {this.state.display && <h1>Displayed!</h1>}
+       </div>
+    );
   }
 };
 
